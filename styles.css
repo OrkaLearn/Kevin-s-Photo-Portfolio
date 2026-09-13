@@ -1,0 +1,363 @@
+/* ============================================
+   Kevin Chai — Photography Portfolio
+   Modern · Minimal · Serif
+   Palette: nature / ocean / cloud
+   ============================================ */
+
+:root {
+  --cloud: #F7F6F1;
+  --deep-sea: #1B2A32;
+  --ocean: #2F5D6E;
+  --sage: #8CA393;
+  --mist: #DFE4E1;
+  --overlay: #0F1A20;
+
+  --font-serif: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+
+  --max-width: 1200px;
+  --gutter: 16px;
+
+  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ---------- Reset ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--cloud);
+  color: var(--deep-sea);
+  font-family: var(--font-serif);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---------- Shell ---------- */
+
+.site {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 48px);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 32px 0 28px;
+  border-bottom: 1px solid var(--mist);
+}
+
+.wordmark {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.site-nav {
+  display: flex;
+  gap: clamp(20px, 4vw, 40px);
+}
+
+.nav-link {
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  transition: color 200ms var(--ease), border-color 200ms var(--ease);
+}
+
+.nav-link:hover {
+  color: var(--ocean);
+  border-bottom-color: var(--ocean);
+}
+
+.nav-link[aria-current="page"] {
+  color: var(--ocean);
+  border-bottom-color: var(--ocean);
+}
+
+/* ---------- Hero ---------- */
+
+.page-hero {
+  padding: clamp(48px, 9vw, 96px) 0 clamp(28px, 5vw, 48px);
+}
+
+.page-title {
+  margin: 0;
+  font-size: clamp(44px, 8vw, 84px);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  font-optical-sizing: auto;
+}
+
+.page-subline {
+  margin: 18px 0 0;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--sage);
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Gallery ---------- */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gutter);
+  align-items: start;
+  padding-bottom: clamp(56px, 9vw, 96px);
+}
+
+.gallery-item {
+  border: 0;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+  text-align: left;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  transition: opacity 250ms var(--ease);
+}
+
+.gallery-item:hover img,
+.gallery-item:focus-visible img {
+  opacity: 0.88;
+}
+
+.gallery-item:focus-visible {
+  outline: 2px solid var(--ocean);
+  outline-offset: 3px;
+}
+
+.gallery-year {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 14px 0 0;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  color: var(--sage);
+}
+
+.photo-date {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  color: var(--sage);
+}
+
+/* ---------- Load more ---------- */
+
+.load-more-row {
+  text-align: center;
+}
+
+.load-more {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--ocean);
+  background: none;
+  border: 1px solid var(--ocean);
+  padding: 12px 32px;
+  cursor: pointer;
+  transition: color 200ms var(--ease), background-color 200ms var(--ease);
+}
+
+.load-more:hover {
+  color: var(--cloud);
+  background-color: var(--ocean);
+}
+
+.load-more:focus-visible {
+  outline: 2px solid var(--ocean);
+  outline-offset: 3px;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  margin-top: auto;
+  border-top: 1px solid var(--mist);
+  padding: 28px 0 36px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--sage);
+}
+
+.footer-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-nav a {
+  transition: color 200ms var(--ease);
+}
+
+.footer-nav a:hover {
+  color: var(--ocean);
+}
+
+/* ---------- Lightbox ---------- */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 26, 32, 0.96);
+}
+
+.lightbox.is-open {
+  display: flex;
+}
+
+.lightbox-figure {
+  margin: 0;
+  max-width: min(92vw, 1400px);
+  max-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-figure img {
+  max-width: 100%;
+  max-height: 88vh;
+  object-fit: contain;
+}
+
+.lightbox-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: none;
+  color: var(--cloud);
+  font-family: var(--font-serif);
+  font-size: 44px;
+  font-weight: 300;
+  line-height: 1;
+  padding: 20px 14px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 200ms var(--ease);
+}
+
+.lightbox-btn:hover,
+.lightbox-btn:focus-visible {
+  opacity: 1;
+}
+
+.lightbox-btn:focus-visible {
+  outline: 1px solid var(--cloud);
+  outline-offset: 2px;
+}
+
+.lightbox-prev { left: clamp(8px, 3vw, 32px); }
+.lightbox-next { right: clamp(8px, 3vw, 32px); }
+
+.lightbox-close {
+  position: absolute;
+  top: 18px;
+  right: clamp(12px, 3vw, 32px);
+  transform: none;
+  font-size: 32px;
+  padding: 10px 12px;
+}
+
+.lightbox-counter {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--cloud);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .lightbox-btn {
+    font-size: 32px;
+  }
+}
+
+/* ---------- Motion preferences ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
