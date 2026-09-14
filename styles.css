@@ -128,6 +128,13 @@ a {
   letter-spacing: 0.04em;
 }
 
+.page-description {
+  margin: 20px 0 0;
+  max-width: 56ch;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
 /* ---------- Gallery ---------- */
 
 .gallery {
